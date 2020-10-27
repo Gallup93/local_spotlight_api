@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class Api::V1::UsersController < ApplicationController
   before_action :authenticate_request!, except: [:create, :login]
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :load_current_user!, only: [:show, :update, :destroy]
 
   def login
     user = User.find_by(email: login_params[:email].to_s.downcase)
