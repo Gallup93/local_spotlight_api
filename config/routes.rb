@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create]
       post '/users/login', to: 'users#login'
+
+      resources :artists, only: [:index]
     end
   end
 end
