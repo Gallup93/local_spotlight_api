@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   require 'json_web_token'
-
+  require 'artist_compiler'
    protected
    # Validates the token and user and sets the @current_user scope
    def authenticate_request!
