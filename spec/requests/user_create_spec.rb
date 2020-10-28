@@ -47,7 +47,7 @@ RSpec.describe "User creation requests" do
       post '/api/v1/users', params: query_valid
       response = JSON.parse(@response.body)
 
-      expect(response["auth_token"].length).to eq(139)
+      expect(response["auth_token"]).to_not eq(nil)
     end
   end
 

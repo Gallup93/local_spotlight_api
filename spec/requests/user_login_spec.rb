@@ -9,31 +9,15 @@ RSpec.describe "user login requests" do
     User.destroy_all
   end
 
-  query_valid = {
-    user: {
-      "email": "ridiculous23@gmail.com",
-      "password": "password"
-    }
-  }
-  query_invalid_email = {
-    user: {
-      "email": "",
-      "password": "password"
-    }
-  }
-  query_invalid_password = {
-    user: {
-      "email": "ridiculous23@gmail.com",
-      "password": ""
-    }
-  }
+  query_valid = { user: { "email": "ridiculous23@gmail.com", "password": "password" } }
+  query_invalid_email = { user: { "email": "", "password": "password" } }
+  query_invalid_password = { user: { "email": "ridiculous23@gmail.com", "password": "" } }
 
   context "a valid request" do
     it "returns a token" do
       post '/api/v1/users/login', params: query_valid
       response = JSON.parse(@response.body)
-
-      expect(response["auth_token"].length).to eq(139)
+      expect(response["auth_token"]).to_not eq(nil)
     end
   end
 
@@ -41,7 +25,6 @@ RSpec.describe "user login requests" do
     it "returns an error message" do
       post '/api/v1/users/login', params: query_invalid_email
       response = JSON.parse(@response.body)
-
       expect(response["error"]).to eq("Invalid username/password")
     end
   end
@@ -50,7 +33,6 @@ RSpec.describe "user login requests" do
     it "returns an error message" do
       post '/api/v1/users/login', params: query_invalid_password
       response = JSON.parse(@response.body)
-
       expect(response["error"]).to eq("Invalid username/password")
     end
   end
