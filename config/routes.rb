@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       post '/users/login', to: 'users#login'
 
-      resources :artists, only: [:index]
+      resources :artists, only: [:index, :create]
     end
   end
 end
