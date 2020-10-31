@@ -5,8 +5,7 @@ class Api::V1::UsersController < ApplicationController
   before_action :load_current_user!, only: [:show, :update, :destroy]
 
   def login
-    user = User.find_by(email: login_params[:email].to_s.downcase)
-
+    user = User.find_by(email: login_params[:email].downcase)
     if user&.authenticate(login_params[:password])
       auth_token = JsonWebToken.encode(user_id: user.id)
       render json: { auth_token: auth_token }, status: :ok
@@ -18,7 +17,6 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email = @user.email.downcase
-
     if @user.save && @user.authenticate(user_params[:password])
       auth_token = JsonWebToken.encode(user_id: @user.id)
       render json: { auth_token: auth_token }, status: :ok
