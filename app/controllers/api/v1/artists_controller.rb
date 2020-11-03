@@ -11,9 +11,9 @@ class Api::V1::ArtistsController < ApplicationController
     if artist.class == Hash
       render json: artist, status: :unprocessable_entity
     elsif artist.save
-      render json: { artist: Artist.last.id }, status: :ok
+      render json: { artist: Artist.last.id }, status: 201
     else
-      render json: { error: { status: 400, message: "Artist already exists", artist_id: Artist.find_by_spotify_id(artist_params["spotify_id"]).id }}
+      render json: { error: { message: "Artist already exists", artist_id: Artist.find_by_spotify_id(artist_params["spotify_id"]).id }}, status: 400
     end
   end
 

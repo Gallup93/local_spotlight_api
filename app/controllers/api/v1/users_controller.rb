@@ -19,7 +19,7 @@ class Api::V1::UsersController < ApplicationController
     @user.email = @user.email.downcase
     if @user.save && @user.authenticate(user_params[:password])
       auth_token = JsonWebToken.encode(user_id: @user.id)
-      render json: { auth_token: auth_token }, status: :ok
+      render json: { auth_token: auth_token }, status: 201
     else
       render json: @user.errors, status: :unprocessable_entity
     end
