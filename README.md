@@ -14,7 +14,7 @@ LOCAL SPOTLIGHT
 
 **Headers** : N/A
 
-**raw JSON example body**
+**Raw JSON example body**
 ```json
 {
     "user": {
@@ -64,7 +64,7 @@ LOCAL SPOTLIGHT
 
 **Headers** : N/A
 
-**raw JSON example body**
+**Raw JSON example body**
 ```json
 {
     "user": {
@@ -110,7 +110,7 @@ LOCAL SPOTLIGHT
 
 **Headers** : N/A
 
-**raw JSON example body**
+**Raw JSON example body**
 ```json
 { "spotify_id":"2vnB6tuQMaQpORiRdvXF9H", "city":"Chicago", "state":"IL"}
 ```
