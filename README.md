@@ -9,7 +9,7 @@ LOCAL SPOTLIGHT
 Authorization is accomplished with an OAuth2.0 Bearer Token that is included in the header.
 ```json
     {
-       Authorization: "Bearer eyJhd...iIp0"
+       Authorization: Bearer eyJhd...iIp0
     }
 ```
 
