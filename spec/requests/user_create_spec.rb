@@ -9,14 +9,6 @@ RSpec.describe "User creation requests" do
       "password_confirmation": "password"
     }
   }
-  query_password_no_match = {
-    user: {
-      "username": "Hank Hill",
-      "email": "ProPAIaN@aol.com",
-      "password": "password",
-      "password_confirmation": "passwor"
-    }
-  }
   query_missing_username = {
     user: {
       "username": "",
@@ -62,15 +54,6 @@ RSpec.describe "User creation requests" do
       response = JSON.parse(@response.body)
 
       expect(response["email"]).to eq(["has already been taken"])
-    end
-  end
-
-  context "typo in password confirmation" do
-    it "returns error message" do
-      post '/api/v1/users', params: query_password_no_match
-      response = JSON.parse(@response.body)
-
-      expect(response["password_confirmation"]).to eq(["doesn't match Password"])
     end
   end
 
