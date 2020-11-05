@@ -42,6 +42,10 @@ RSpec.describe "User creation requests" do
     }
   }
 
+  after(:context) do
+    User.destroy_all
+  end
+
   context "a valid request" do
     it "succesfully creates a new user and returns token" do
       post '/api/v1/users', params: query_valid
