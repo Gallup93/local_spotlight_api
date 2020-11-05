@@ -2,9 +2,18 @@
 
 LOCAL SPOTLIGHT
 
-# Endpoints
+# ENDPOINTS
 
-## __Create an Account__ 
+## AUTHORIZATION HEADER EXAMPLE:
+
+Authorization is accomplished with an OAuth2.0 Bearer Token that is included in the header.
+```json
+    {
+       Authorization: "Bearer eyJhd...iIp0"
+    }
+```
+
+## __USER SIGNUP__ 
 
 **URL** : `/api/v1/users/`
 
@@ -55,7 +64,7 @@ Successful requests are returned a JSON Web Token to be used inorder to authoriz
 }
 ```
 ---
-## __Log Into Account__ 
+## __USER LOGIN__ 
 
 **URL** : `/api/v1/users/login`
 
@@ -102,7 +111,7 @@ Successful requests are returned a JSON Web Token to be used inorder to authoriz
 }
 ```
 ---
-## __Create New Artist__
+## __ARTIST CREATION__
 
 **URL** : `/api/v1/artists`
 
@@ -149,7 +158,7 @@ The newly created aritst's ID is returned in the response.
 Along with the error message, the existing artist's ID is returned in response.
 
 ---
-## __Get Artists by City__ 
+## __ARTISTS BY CITY__ 
 
 **URL** : `/api/v1/artists`
 
