@@ -29,8 +29,7 @@ Authorization is accomplished with an OAuth2.0 Bearer Token that is included in 
     "user": {
       "username": "Joliet Jake",
       "email": "TheBluesBrothers@gmail.com",
-      "password": "CheezWhiz1060",
-      "password_confirmation": "CheezWhiz1060"
+      "password": "CheezWhiz1060"
     }
 }
 ```
