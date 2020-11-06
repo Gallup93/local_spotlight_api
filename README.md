@@ -2,6 +2,8 @@
 
 LOCAL SPOTLIGHT
 
+Heroku Link: https://local-spotlight-api.herokuapp.com
+
 # ENDPOINTS
 
 ## AUTHORIZATION HEADER EXAMPLE:
