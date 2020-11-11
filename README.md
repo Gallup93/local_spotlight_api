@@ -8,7 +8,7 @@ Heroku Link: https://local-spotlight-api.herokuapp.com
 
 ## AUTHORIZATION HEADER EXAMPLE:
 
-Authorization is accomplished with an OAuth2.0 Bearer Token that is included in the header.
+Authorization is accomplished by providing an OAuth2.0 Bearer Token in the request header.
 ```
     {
        Authorization: "Bearer <Auth Token>"
